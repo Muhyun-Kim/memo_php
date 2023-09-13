@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<!-- <link rel="stylesheet" href="./header.css"> -->
+<link rel="stylesheet" href="./style.css">
 <title>メモアプリ</title>
 </head>
 <body class="header">
