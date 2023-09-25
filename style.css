@@ -1,25 +1,12 @@
-.titleHeading,
-.createdAtHeading,
-.title,
-.createdAt,
-.update {
-  display: inline-block;
-  padding-bottom: 4ppx;
+@charset "UTF-8";
+
+.memo-body {
+  display: flex;
+  flex-direction: column;
 }
 
-.titleHeading,
-.createdAtHeading {
-  text-align: center;
-  font-weight: bold;
-  width: 11em;
-}
-
-.title,
-.createdAt {
-  text-align: center;
-  width: 11em;
-}
-
-.createdAt {
-    margin-right: 8px;
+.memo-detail-title,
+.memo-detail-details {
+  display: flex;
+  flex-direction: column;
 }

@@ -1,17 +1,18 @@
 <?php require './header.php'; ?>
-<div class="titleHeading">タイトル</div>
-<div class="createdAtHeading">作成日</div>
     <?php 
+    echo '<table>';
+    echo '<tr><th>タイトル</th><th>更新時</th></tr>';
     $pdo = new PDO('mysql:host=localhost;dbname=memos;charset=utf8',
     'writer', 'password');
-    foreach ($pdo->query('select title, created_at from memo') as $row){
-        echo '<form action="memo-detail.php">';
-        echo '<input type="hidden" name="title" value="', $row['title'], '">';
-	    echo '<div class="title">', $row['title'], '</div> ';
-        echo '<input type="hidden" name="created_at" value="', $row['created_at'], '">';
-	    echo '<div class="createdAt">', $row['created_at'], '</div> ';
-        echo '<div class="update"><input type="submit" value="更新"></div>';
-        echo '</form>';
-        echo"\n";
+    $sql=$pdo->query('select * from memo order by created_at desc');
+    foreach ($sql as $row){
+        $id = $row['id'];
+        echo '<tr>';
+        echo '<td>';
+        echo '<a href="memo-detail.php?id=', $id,'">', $row['title'], '</a>';
+        echo '</td>';
+        echo '<td>', date('Y-m-d H:i', strtotime($row['created_at'])),'</td>';
+        echo '</tr>';
     }
+    echo '</table>';
     ?>

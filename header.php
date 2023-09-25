@@ -1,3 +1,8 @@
+<?php
+// TODO : デバックのために
+header('Cache-Control: no-store, no-cache, must-revalidate');
+header('Expires: 0');
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -7,8 +12,9 @@
 </head>
 <body class="header">
     <div>
-        <!-- ToDo メモアプリのアイコンを入れる -->
+        <!-- TODO メモアプリのアイコンを入れる -->
         <a href="index.php">メモパプリ</a>
         <a href="create-memo-input.php">メモ追加</a>
+        <a href="favorite.php">お気に入り</a>
     </div>
 </body>
